@@ -1,0 +1,8 @@
+page_json.data:
+  path: '/page_json/{key}/{node}'
+  defaults:
+    _controller: '\Drupal\page_json\Controller\ExportJsonController::data'
+    _title: 'Json data'
+  requirements:
+    _permission: 'access content'
+  

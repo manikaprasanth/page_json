@@ -1,0 +1,4 @@
+name: Page Json
+description: Provides a node json format.
+type: module
+core: 8.x
