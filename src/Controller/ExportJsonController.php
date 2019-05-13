@@ -40,6 +40,5 @@ class ExportJsonController extends ControllerBase {
     else {
       throw new AccessDeniedHttpException();
     }
-    
   }
 }

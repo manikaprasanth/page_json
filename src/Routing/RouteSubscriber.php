@@ -16,5 +16,4 @@ class RouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('system.site_information_settings')) 
       $route->setDefault('_form', 'Drupal\page_json\Form\ExtendedSiteInformationForm');
   }
-
 }
