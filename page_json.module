@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Provides a customized live weather report using Yahoo weather API.
+ * Provides a node as json format.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;

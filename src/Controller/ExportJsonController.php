@@ -10,8 +10,14 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  * Controller for export json.
  */
 class ExportJsonController extends ControllerBase {
+  
   /**
-   * {@inheritdoc}
+   * Constructs a Json Export data.
+   *
+   * @param $key
+   *   The Site API Key value form site information.
+   * @param  $node
+   *   The page nid from url.
    */
   public function jsonExport($key = NULL, $node = NULL) {
     
@@ -19,7 +25,7 @@ class ExportJsonController extends ControllerBase {
     $json_array = array(
       'data' => array()
     );
-    if ( ($api_key == $key) && is_numeric($node) ) {
+    if ($api_key == $key && is_numeric($node)) {
       $node =  Node::load($node);
       if(!empty($node) && $node->get('type')->target_id == 'page') { 
         $json_array['data'][] = array(
@@ -39,6 +45,5 @@ class ExportJsonController extends ControllerBase {
     else {
       throw new AccessDeniedHttpException();
     }
-
   }
 }
