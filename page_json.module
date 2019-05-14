@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Provides a customized live weather report using Yahoo weather API.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function page_json_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.page_json':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('<p>A simple module provides a node as json format<p>');
+      return $output;
+  }
+}

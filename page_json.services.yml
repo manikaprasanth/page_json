@@ -3,4 +3,3 @@ services:
     class: Drupal\page_json\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
-      

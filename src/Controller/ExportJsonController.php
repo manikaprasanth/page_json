@@ -4,7 +4,6 @@ namespace Drupal\page_json\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\Entity\Node;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Drupal\node\NodeInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
@@ -14,7 +13,7 @@ class ExportJsonController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function data($key = NULL, $node = NULL) {
+  public function jsonExport($key = NULL, $node = NULL) {
     
     $api_key = \Drupal::config('system.site')->get('siteapikey');
     $json_array = array(
@@ -40,5 +39,6 @@ class ExportJsonController extends ControllerBase {
     else {
       throw new AccessDeniedHttpException();
     }
+
   }
 }
